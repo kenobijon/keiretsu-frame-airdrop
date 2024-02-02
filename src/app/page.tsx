@@ -1,15 +1,16 @@
 import { Metadata } from "next";
 
 const POST_URL = "https://keiretsu-frame-airdrop.vercel.app/api/frame";
-const IMG_URL =
-  "https://images.ctfassets.net/c5bd0wqjc7v0/7uubrlHqZAqWxf3WrH52YK/abf34a38dbc49552056ff003e4223cef/1200x675.png?w=1200&h=675";
+const IMG_URL = "https://ibb.co/q11MX3j";
 
 console.log("posturl", POST_URL);
 const frameMetadata = {
   "fc:frame": "vNext",
   "fc:frame:image": IMG_URL,
-  "fc:frame:button:1": "Not Registered to Vote",
-  "fc:frame:button:2": "Registered to Vote",
+  "fc:frame:button:1": "5 M",
+  "fc:frame:button:2": "25 M",
+  "fc:frame:button:3": "52 M",
+  "fc:frame:button:4": "74 M",
   "fc:frame:post_url": POST_URL,
 };
 
