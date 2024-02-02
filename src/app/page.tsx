@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 const POST_URL = "https://frame-airdrop.vercel.app/api/frame";
 const IMG_URL =
-  "https://i.seadn.io/s/raw/files/f3c250a8605f6ba20c91569f77e21a33.png?auto=format&dpr=1&w=3840";
+  "https://images.ctfassets.net/c5bd0wqjc7v0/7uubrlHqZAqWxf3WrH52YK/abf34a38dbc49552056ff003e4223cef/1200x675.png?w=1200&h=675";
 
 console.log("posturl", POST_URL);
 const frameMetadata = {
