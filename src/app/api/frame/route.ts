@@ -30,6 +30,8 @@ export async function POST(req: NextRequest, res: NextResponse) {
     throw new Error(`Failed to validate message: ${e}`);
   }
 
+  console.log(validatedMessage?.data);
+
   const buttonId = validatedMessage?.data?.frameActionBody?.buttonIndex || 0;
   const fid = validatedMessage?.data?.fid || 0;
 
