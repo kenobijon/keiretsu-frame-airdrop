@@ -37,10 +37,10 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
   console.log(`Pressed button ${buttonId} with fid ${fid}`);
 
-  const NO_VOTE_IMAGE_URL =
-    "https://www.shutterstock.com/image-illustration/grunge-stamp-isolated-please-vote-260nw-2290365783.jpg";
+  const INCORRECT_IMAGE_URL =
+    "https://t4.ftcdn.net/jpg/03/87/37/09/360_F_387370928_uxePPpjy9FtcCCU3oTjHbPsKjl36mOaX.jpg";
 
-  const VOTE_IMAGE_URL =
+  const CORRECT_IMAGE_URL =
     "https://i.pinimg.com/originals/fd/d0/0e/fdd00eff2cfe977daed3584f56eafbc9.gif";
 
   let html = "";
@@ -48,36 +48,50 @@ export async function POST(req: NextRequest, res: NextResponse) {
     html =
       `<!DOCTYPE html><html><head>` +
       `<meta property="fc:frame" content="vNext" />` +
-      `<meta property="fc:frame:image" content="${NO_VOTE_IMAGE_URL}" />` +
-      `<meta property="fc:frame:button:1" content="I'm still not going to vote :(" />` +
-      `<meta property="fc:frame:button:2" content="I changed my mind I'm going to vote!" />` +
+      `<meta property="fc:frame:image" content="${INCORRECT_IMAGE_URL}" />` +
+      `<meta property="fc:frame:button:1" content="5 Million" />` +
+      `<meta property="fc:frame:button:2" content="25 Million" />` +
+      `<meta property="fc:frame:button:3" content="52 Million" />` +
+      `<meta property="fc:frame:button:4" content="74 Million" />` +
       `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
       `</head></html>`;
   } else if (buttonId === 2) {
     html =
       `<!DOCTYPE html><html><head>` +
       `<meta property="fc:frame" content="vNext" />` +
-      `<meta property="fc:frame:image" content="${NO_VOTE_IMAGE_URL}" />` +
-      `<meta property="fc:frame:button:1" content="I mis-clicked and not voting :(" />` +
-      `<meta property="fc:frame:button:2" content="I <3 Voting" />` +
+      `<meta property="fc:frame:image" content="${INCORRECT_IMAGE_URL}" />` +
+      `<meta property="fc:frame:button:1" content="5 Million" />` +
+      `<meta property="fc:frame:button:2" content="25 Million" />` +
+      `<meta property="fc:frame:button:3" content="52 Million" />` +
+      `<meta property="fc:frame:button:4" content="74 Million" />` +
       `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
       `</head></html>`;
   } else if (buttonId === 3) {
     html =
       `<!DOCTYPE html><html><head>` +
       `<meta property="fc:frame" content="vNext" />` +
-      `<meta property="fc:frame:image" content="${VOTE_IMAGE_URL}" />` +
-      `<meta property="fc:frame:button:1" content="I mis-clicked and not voting :(" />` +
-      `<meta property="fc:frame:button:2" content="I <3 Voting" />` +
+      `<meta property="fc:frame:image" content="${CORRECT_IMAGE_URL}" />` +
+      `<meta property="fc:frame:button:1" content="Visit Stand With Crypto!" />` +
       `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
-      `</head></html>`;
+      `<script type="text/javascript">
+          function openStand() {
+            window.open('https://stand.org', '_blank');
+          }
+        </script>` +
+      `</head>      
+      <body>
+        <button onclick="openStand()">Visit Stand w/ Crypto</button>
+      </body>
+      </html>`;
   } else if (buttonId === 4) {
     html =
       `<!DOCTYPE html><html><head>` +
       `<meta property="fc:frame" content="vNext" />` +
-      `<meta property="fc:frame:image" content="${NO_VOTE_IMAGE_URL}" />` +
-      `<meta property="fc:frame:button:1" content="I mis-clicked and not voting :(" />` +
-      `<meta property="fc:frame:button:2" content="I <3 Voting" />` +
+      `<meta property="fc:frame:image" content="${INCORRECT_IMAGE_URL}" />` +
+      `<meta property="fc:frame:button:1" content="5 Million" />` +
+      `<meta property="fc:frame:button:2" content="25 Million" />` +
+      `<meta property="fc:frame:button:3" content="52 Million" />` +
+      `<meta property="fc:frame:button:4" content="74 Million" />` +
       `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
       `</head></html>`;
   }
