@@ -2,11 +2,11 @@ import { NextRequest, NextResponse } from "next/server";
 import { Message, getSSLHubRpcClient } from "@farcaster/hub-nodejs";
 import { FrameRequest } from "../../types/farcasterTypes";
 
-const POST_URL = "https://keiretsu-frame-airdrop.vercel.app/api/frame";
-const VISIT_URL = "https://keiretsu-frame-airdrop.vercel.app/api/frame";
+const POST_URL = "https://keiretsu-frame-airdrop.vercel.app/api/visit";
+const VISIT_URL = "https://keiretsu-frame-airdrop.vercel.app/api/visit";
 
 export async function POST(req: NextRequest, res: NextResponse) {
-  console.log("POST received at /api/frame");
+  console.log("POST received at /api/visit");
 
   const HUB_URL = process.env["HUB_URL"] || "nemes.farcaster.xyz:2283";
   const client = getSSLHubRpcClient(HUB_URL);
@@ -37,12 +37,6 @@ export async function POST(req: NextRequest, res: NextResponse) {
   const fid = validatedMessage?.data?.fid || 0;
 
   console.log(`Pressed button ${buttonId} with fid ${fid}`);
-
-  function openStand() {
-    window.open("https://stand.org", "_blank");
-  }
-
-  openStand();
 
   const INCORRECT_IMAGE_URL =
     "https://t4.ftcdn.net/jpg/03/87/37/09/360_F_387370928_uxePPpjy9FtcCCU3oTjHbPsKjl36mOaX.jpg";
@@ -80,7 +74,16 @@ export async function POST(req: NextRequest, res: NextResponse) {
       `<meta property="fc:frame:image" content="${CORRECT_IMAGE_URL}" />` +
       `<meta property="fc:frame:button:1" content="Visit Stand With Crypto!" />` +
       `<meta property="fc:frame:post_url" content="${VISIT_URL}" />` +
-      `</head></html>`;
+      `<script type="text/javascript">
+          function openStand() {
+            window.open('https://stand.org', '_blank');
+          }
+        </script>` +
+      `</head>      
+      <body>
+        <button onclick="openStand()">Visit Stand w/ Crypto</button>
+      </body>
+      </html>`;
   } else if (buttonId === 4) {
     html =
       `<!DOCTYPE html><html><head>` +
