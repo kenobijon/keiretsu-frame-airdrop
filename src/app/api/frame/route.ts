@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { Message, getSSLHubRpcClient } from "@farcaster/hub-nodejs";
 import { FrameRequest } from "../../types/farcasterTypes";
 
-const POST_URL = "https://frame-airdrop.vercel.app/api/frame";
+const POST_URL = "https://keiretsu-frame-airdrop.vercel.app/api/frame";
 
 export async function POST(req: NextRequest, res: NextResponse) {
   console.log("POST received at /api/frame");
@@ -35,17 +35,32 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
   console.log(`Pressed button ${buttonId} with fid ${fid}`);
 
-  const NEW_IMAGE_URLimage =
-    "https://assets.blocklive.io/events/2bfb5de2-cd38-49d5-bb3b-1834dfc66380/58662d9d-303b-4c72-b3cd-92207ca8b91b_dall_e_2024_01_28_23_08_18___design_a_banner_image__size_936px_x_468px__that_looks_like_an_entrance_ticket_to_an_event_for_the__frames__feature_on_a_social_media_platform_resembli.png";
+  const NO_VOTE_IMAGE_URL =
+    "https://i.etsystatic.com/28023793/r/il/989a99/3445131839/il_340x270.3445131839_gq7b.jpg";
 
-  let html =
-    `<!DOCTYPE html><html><head>` +
-    `<meta property="fc:frame" content="vNext" />` +
-    `<meta property="fc:frame:image" content="${NEW_IMAGE_URLimage}" />` +
-    `<meta property="fc:frame:button:1" content="$DOGE" />` +
-    `<meta property="fc:frame:button:2" content="$SOL" />` +
-    `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
-    `</head></html>`;
+  const VOTE_IMAGE_URL =
+    "https://i.pinimg.com/originals/fd/d0/0e/fdd00eff2cfe977daed3584f56eafbc9.gif";
+
+  let html = "";
+  if (buttonId === 0) {
+    html =
+      `<!DOCTYPE html><html><head>` +
+      `<meta property="fc:frame" content="vNext" />` +
+      `<meta property="fc:frame:image" content="${NO_VOTE_IMAGE_URL}" />` +
+      `<meta property="fc:frame:button:1" content="I'm still not going to vote :(" />` +
+      `<meta property="fc:frame:button:2" content="I changed my mind I'm going to vote!" />` +
+      `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
+      `</head></html>`;
+  } else if (buttonId === 1) {
+    html =
+      `<!DOCTYPE html><html><head>` +
+      `<meta property="fc:frame" content="vNext" />` +
+      `<meta property="fc:frame:image" content="${VOTE_IMAGE_URL}" />` +
+      `<meta property="fc:frame:button:1" content="I'm still not going to vote :(" />` +
+      `<meta property="fc:frame:button:2" content="I changed my mind I'm going to vote!" />` +
+      `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
+      `</head></html>`;
+  }
 
   return new Response(html, { headers: { "Content-Type": "text/html" } });
 }

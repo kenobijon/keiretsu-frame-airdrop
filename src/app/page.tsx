@@ -8,8 +8,8 @@ console.log("posturl", POST_URL);
 const frameMetadata = {
   "fc:frame": "vNext",
   "fc:frame:image": IMG_URL,
-  "fc:frame:button:1": "$ETH",
-  "fc:frame:button:2": "$BTC",
+  "fc:frame:button:1": "Not Registered to Vote",
+  "fc:frame:button:2": "Registered to Vote",
   "fc:frame:post_url": POST_URL,
 };
 
