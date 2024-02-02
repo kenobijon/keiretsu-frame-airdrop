@@ -56,8 +56,8 @@ export async function POST(req: NextRequest, res: NextResponse) {
       `<!DOCTYPE html><html><head>` +
       `<meta property="fc:frame" content="vNext" />` +
       `<meta property="fc:frame:image" content="${VOTE_IMAGE_URL}" />` +
-      `<meta property="fc:frame:button:1" content="I'm still not going to vote :(" />` +
-      `<meta property="fc:frame:button:2" content="I changed my mind I'm going to vote!" />` +
+      `<meta property="fc:frame:button:1" content="Lets go !! Democracy" />` +
+      `<meta property="fc:frame:button:2" content="I <3 Votin>" />` +
       `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
       `</head></html>`;
   }
