@@ -36,13 +36,13 @@ export async function POST(req: NextRequest, res: NextResponse) {
   console.log(`Pressed button ${buttonId} with fid ${fid}`);
 
   const NO_VOTE_IMAGE_URL =
-    "https://i.etsystatic.com/28023793/r/il/989a99/3445131839/il_340x270.3445131839_gq7b.jpg";
+    "https://www.shutterstock.com/image-illustration/grunge-stamp-isolated-please-vote-260nw-2290365783.jpg";
 
   const VOTE_IMAGE_URL =
     "https://i.pinimg.com/originals/fd/d0/0e/fdd00eff2cfe977daed3584f56eafbc9.gif";
 
   let html = "";
-  if (buttonId === 0) {
+  if (buttonId === 1) {
     html =
       `<!DOCTYPE html><html><head>` +
       `<meta property="fc:frame" content="vNext" />` +
@@ -51,7 +51,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
       `<meta property="fc:frame:button:2" content="I changed my mind I'm going to vote!" />` +
       `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
       `</head></html>`;
-  } else if (buttonId === 1) {
+  } else if (buttonId === 2) {
     html =
       `<!DOCTYPE html><html><head>` +
       `<meta property="fc:frame" content="vNext" />` +
