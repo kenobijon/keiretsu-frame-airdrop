@@ -57,7 +57,25 @@ export async function POST(req: NextRequest, res: NextResponse) {
     html =
       `<!DOCTYPE html><html><head>` +
       `<meta property="fc:frame" content="vNext" />` +
+      `<meta property="fc:frame:image" content="${NO_VOTE_IMAGE_URL}" />` +
+      `<meta property="fc:frame:button:1" content="I mis-clicked and not voting :(" />` +
+      `<meta property="fc:frame:button:2" content="I <3 Voting" />` +
+      `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
+      `</head></html>`;
+  } else if (buttonId === 3) {
+    html =
+      `<!DOCTYPE html><html><head>` +
+      `<meta property="fc:frame" content="vNext" />` +
       `<meta property="fc:frame:image" content="${VOTE_IMAGE_URL}" />` +
+      `<meta property="fc:frame:button:1" content="I mis-clicked and not voting :(" />` +
+      `<meta property="fc:frame:button:2" content="I <3 Voting" />` +
+      `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
+      `</head></html>`;
+  } else if (buttonId === 4) {
+    html =
+      `<!DOCTYPE html><html><head>` +
+      `<meta property="fc:frame" content="vNext" />` +
+      `<meta property="fc:frame:image" content="${NO_VOTE_IMAGE_URL}" />` +
       `<meta property="fc:frame:button:1" content="I mis-clicked and not voting :(" />` +
       `<meta property="fc:frame:button:2" content="I <3 Voting" />` +
       `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
