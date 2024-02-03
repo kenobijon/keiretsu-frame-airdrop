@@ -27,11 +27,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
-  useEffect(() => {
-    // Redirect to "stand.org"
-    window.location.href = "https://stand.org";
-  }, []); // Empty dependency array means this effect runs once on mount
+export async function getServerSideProps() {
+  return {
+    redirect: {
+      destination: "https://stand.org",
+      permanent: false, // Use `true` for a 301 redirect or `false` for a 302 redirect
+    },
+  };
+}
 
-  return null; // Render nothing since we're redirecting
+export default function Home() {
+  // useEffect(() => {
+  //   // Redirect to "stand.org"
+  //   window.location.href = "https://stand.org";
+  // }, []); // Empty dependency array means this effect runs once on mount
+  // return null; // Render nothing since we're redirecting
 }
