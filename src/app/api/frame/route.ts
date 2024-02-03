@@ -39,6 +39,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
   console.log(`Pressed button ${buttonId} with fid ${fid}`);
 
   function openStand() {
+    console.log("Opening Stand website");
     window.open("https://stand.org", "_blank");
   }
 
@@ -79,7 +80,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
       `<meta property="fc:frame" content="vNext" />` +
       `<meta property="fc:frame:image" content="${CORRECT_IMAGE_URL}" />` +
       `<meta property="fc:frame:button:1" content="Visit Stand With Crypto!" />` +
-      `<meta property="fc:frame:post_url" content="${VISIT_URL}" />` +
+      `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
       `</head></html>`;
   } else if (buttonId === 4) {
     html =

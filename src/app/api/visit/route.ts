@@ -38,6 +38,13 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
   console.log(`Pressed button ${buttonId} with fid ${fid}`);
 
+  function openStand() {
+    console.log("Opening Stand website");
+    window.open("https://stand.org", "_blank");
+  }
+
+  openStand();
+
   const INCORRECT_IMAGE_URL =
     "https://t4.ftcdn.net/jpg/03/87/37/09/360_F_387370928_uxePPpjy9FtcCCU3oTjHbPsKjl36mOaX.jpg";
 
@@ -74,16 +81,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
       `<meta property="fc:frame:image" content="${CORRECT_IMAGE_URL}" />` +
       `<meta property="fc:frame:button:1" content="Visit Stand With Crypto!" />` +
       `<meta property="fc:frame:post_url" content="${VISIT_URL}" />` +
-      `<script type="text/javascript">
-          function openStand() {
-            window.open('https://stand.org', '_blank');
-          }
-        </script>` +
-      `</head>      
-      <body>
-        <button onclick="openStand()">Visit Stand w/ Crypto</button>
-      </body>
-      </html>`;
+      `</head></html>`;
   } else if (buttonId === 4) {
     html =
       `<!DOCTYPE html><html><head>` +
