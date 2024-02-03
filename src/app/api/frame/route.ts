@@ -36,15 +36,6 @@ export async function POST(req: NextRequest, res: NextResponse) {
   const buttonId = validatedMessage?.data?.frameActionBody?.buttonIndex || 0;
   const fid = validatedMessage?.data?.fid || 0;
 
-  console.log(`Pressed button ${buttonId} with fid ${fid}`);
-
-  function openStand() {
-    console.log("Opening Stand website");
-    window.open("https://stand.org", "_blank");
-  }
-
-  openStand();
-
   const INCORRECT_IMAGE_URL =
     "https://t4.ftcdn.net/jpg/03/87/37/09/360_F_387370928_uxePPpjy9FtcCCU3oTjHbPsKjl36mOaX.jpg";
 
