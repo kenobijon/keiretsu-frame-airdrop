@@ -1,4 +1,4 @@
-import { Metadata, GetServerSideProps } from "next";
+import { Metadata } from "next";
 
 const POST_URL = "https://keiretsu-frame-airdrop.vercel.app/api/frame";
 const IMG_URL = "https://keiretsu-frame-airdrop.vercel.app/crypto-q.png";
@@ -26,20 +26,14 @@ export const metadata: Metadata = {
   },
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  console.log("redirecting!!!");
-  return {
-    redirect: {
-      destination: "https://standwithcrypto.org",
-      permanent: false, // false for temporary redirect, true for permanent
-    },
-  };
-};
-
 export default function Home() {
   return (
-    <>
-      <main>Frame Airdrop!</main>
-    </>
+    <main>
+      <h1>Stand With Crypto Frame Quiz</h1>
+      <p>
+        To participate, please visit{" "}
+        <a href="https://www.standwithcrypto.org/">Stand with Crypto</a>.
+      </p>
+    </main>
   );
 }
