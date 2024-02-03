@@ -36,4 +36,11 @@ export async function getServerSideProps() {
   };
 }
 
-export default function Home() {}
+export default function Home() {
+  return {
+    redirect: {
+      destination: "https://standwithcrypto.org",
+      permanent: false, // Use `true` for a 301 redirect or `false` for a 302 redirect
+    },
+  };
+}
