@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import React, { useEffect } from "react";
 
 const POST_URL = "https://keiretsu-frame-airdrop.vercel.app/api/frame";
 const IMG_URL = "https://keiretsu-frame-airdrop.vercel.app/crypto-q.png";
@@ -27,9 +28,10 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return (
-    <>
-      <main>Frame Airdrop!</main>
-    </>
-  );
+  useEffect(() => {
+    // Redirect to "stand.org"
+    window.location.href = "https://stand.org";
+  }, []); // Empty dependency array means this effect runs once on mount
+
+  return null; // Render nothing since we're redirecting
 }
