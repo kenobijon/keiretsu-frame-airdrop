@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import React, { useEffect } from "react";
 
 const POST_URL = "https://keiretsu-frame-airdrop.vercel.app/api/frame";
 const IMG_URL = "https://keiretsu-frame-airdrop.vercel.app/crypto-q.png";
@@ -27,20 +26,10 @@ export const metadata: Metadata = {
   },
 };
 
-export async function getServerSideProps() {
-  return {
-    redirect: {
-      destination: "https://standwithcrypto.org",
-      permanent: false, // Use `true` for a 301 redirect or `false` for a 302 redirect
-    },
-  };
-}
-
 export default function Home() {
-  return {
-    redirect: {
-      destination: "https://standwithcrypto.org",
-      permanent: false, // Use `true` for a 301 redirect or `false` for a 302 redirect
-    },
-  };
+  return (
+    <>
+      <main>Frame Airdrop!</main>
+    </>
+  );
 }
