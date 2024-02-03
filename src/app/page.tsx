@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { useEffect } from "react";
 
 const POST_URL = "https://keiretsu-frame-airdrop.vercel.app/api/frame";
 const IMG_URL = "https://keiretsu-frame-airdrop.vercel.app/crypto-q.png";
@@ -27,6 +28,12 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  useEffect(() => {
+    // Ensure this code runs only in the browser
+    if (typeof window !== "undefined") {
+      window.location.href = "https://example.com"; // Replace with your target URL
+    }
+  }, []);
   return (
     <>
       <main>Frame Airdrop!</main>
