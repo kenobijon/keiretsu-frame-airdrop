@@ -31,7 +31,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
     throw new Error(`Failed to validate message: ${e}`);
   }
 
-  console.log(validatedMessage?.data);
+  console.log(validatedMessage);
 
   const buttonId = validatedMessage?.data?.frameActionBody?.buttonIndex || 0;
   const fid = validatedMessage?.data?.fid || 0;
@@ -54,6 +54,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
       `<meta property="fc:frame:button:2" content="25 Million" />` +
       `<meta property="fc:frame:button:3" content="52 Million" />` +
       `<meta property="fc:frame:button:4" content="74 Million" />` +
+      `<meta property="fc:frame:input:text"/>` +
       `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
       `</head></html>`;
   } else if (buttonId === 2) {
