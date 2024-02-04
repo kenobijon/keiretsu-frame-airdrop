@@ -4,6 +4,7 @@ import { FrameRequest } from "../../types/farcasterTypes";
 
 const POST_URL = "https://keiretsu-frame-airdrop.vercel.app/api/visit";
 const VISIT_URL = "https://keiretsu-frame-airdrop.vercel.app/api/visit";
+const TOGGLE_URL = "https://keiretsu-frame-airdrop.vercel.app/api/toggle";
 
 export async function POST(req: NextRequest, res: NextResponse) {
   console.log("POST received at /api/visit");
