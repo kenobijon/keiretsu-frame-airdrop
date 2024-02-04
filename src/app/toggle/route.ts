@@ -45,7 +45,6 @@ export default async function handler(
       //     sortedValues = returnedItems
       // }
       // console.log({sortedValues})
-      // @ts-expect-error
 
       let images = ["base.jpg", "crypto-q.jpg"];
       sortedValues = [IMG_URL + "base.jpg", IMG_URL + "crypto-q.jpg"];
