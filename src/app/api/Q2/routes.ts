@@ -5,11 +5,11 @@ import { FrameRequest } from "../../types/farcasterTypes";
 const POST_URL = "https://keiretsu-frame-airdrop.vercel.app/api/frame";
 const VISIT_URL = "https://keiretsu-frame-airdrop.vercel.app/api/frame";
 const TOGGLE_URL = "https://keiretsu-frame-airdrop.vercel.app/api/toggle";
-const Q2_URL = "https://keiretsu-frame-airdrop.vercel.app/api/Q2";
+const Q2_URL = "https://keiretsu-frame-airdrop.vercel.app/api/q2";
 const Q2_IMAGE_URL = "https://keiretsu-frame-airdrop.vercel.app/g20-q.png";
 
 export async function POST(req: NextRequest, res: NextResponse) {
-  console.log("POST received at /api/frame");
+  console.log("POST received at /api/q2");
 
   const HUB_URL = process.env["HUB_URL"] || "nemes.farcaster.xyz:2283";
   const client = getSSLHubRpcClient(HUB_URL);
@@ -36,15 +36,6 @@ export async function POST(req: NextRequest, res: NextResponse) {
   }
 
   console.log(validatedMessage);
-
-  const buttonId = validatedMessage?.data?.frameActionBody?.buttonIndex || 0;
-  const fid = validatedMessage?.data?.fid || 0;
-
-  const INCORRECT_IMAGE_URL =
-    "https://t4.ftcdn.net/jpg/03/87/37/09/360_F_387370928_uxePPpjy9FtcCCU3oTjHbPsKjl36mOaX.jpg";
-
-  const CORRECT_IMAGE_URL =
-    "https://i.pinimg.com/originals/fd/d0/0e/fdd00eff2cfe977daed3584f56eafbc9.gif";
 
   let html =
     `<!DOCTYPE html><html><head>` +
