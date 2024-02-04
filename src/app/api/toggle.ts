@@ -4,9 +4,10 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 const ENVI = process.env.ENVI ?? "devv";
 const READ_MORE_LINK = null;
-
 const IMG_URL = "https://keiretsu-frame-airdrop.vercel.app/";
 
+let images = ["base.jpg", "crypto-q.jpg"];
+// const sortedValues = [IMG_URL + "base.jpg", IMG_URL + "crypto-q.jpg"];
 // const HUB_URL = process.env['HUB_URL'] || "nemes.farcaster.xyz:2283"
 // const client = getSSLHubRpcClient(HUB_URL);
 
@@ -17,11 +18,58 @@ export default async function handler(
   if (req.method === "POST") {
     console.log({ requestBody: req.body });
     try {
+      // let validatedMessage: Message | undefined = undefined;
+      // let frameMessage;
+      // let result
+
+      // try {
+      //     frameMessage = Message.decode(Buffer.from(req.body?.trustedData?.messageBytes || '', 'hex'));
+      //     console.log({frameMessage})
+      //     result = await client.validateMessage(frameMessage);
+      //     console.log({result})
+      //     if (result.isOk() && result.value.valid) {
+
+      //         validatedMessage = result.value.message;
+      //     }
+      // } catch (e)  {
+      //     return res.status(400).send(`Failed to validate message: ${e}`);
+      // }
+
+      // console.log({ frameMessage })
+      // console.log({result})
+      // let buttonId = validatedMessage?.data?.frameActionBody?.
+      //     buttonIndex || 2;
+      // console.log({validatedMessage})
       let buttonId = req.body.untrustedData.buttonIndex || 2;
       console.log({ buttonId });
       let idNext = req.query.id as unknown as string;
       let id = idNext.slice(0, idNext.length - 1);
+      // let queryySort = parseInt(idSortNext[idSortNext.length - 2])
+      // console.log({queryySort})
+      // let querySort = queryySort == 0 ? "desc" : "asc"
 
+      // let buttonId = req.body.buttonId || 2
+      // console.log({id})
+      // console.log({buttonId})
+      // const querySort = req.query.sort
+      // console.log({querySort})
+      // let sort
+      // switch (buttonId) {
+      //     case 1:
+      //     case 2:
+      //         sort = querySort
+      //         break
+      //     case 3:
+      //         sort = "asc"
+      //         break
+      //     case 4:
+      //         sort = "desc"
+      //         break
+      //     default:
+      //         sort = 'asc'
+      // }
+
+      // console.log({sort})
       let curr = Number(idNext[idNext.length - 1]);
       let next;
 
@@ -35,7 +83,7 @@ export default async function handler(
       if (!values) returnedItems = [];
       else returnedItems = values.files;
       // console.log({returnedItems})
-      let sortedValues = returnedItems;
+      let sortedValues = [IMG_URL + "base.jpg", IMG_URL + "crypto-q.jpg"];
       // if (sort == "desc") {
       //     // console.log("I am in desc")
       //     sortedValues = [...returnedItems].reverse()
@@ -45,10 +93,7 @@ export default async function handler(
       //     sortedValues = returnedItems
       // }
       // console.log({sortedValues})
-
-      let images = ["base.jpg", "crypto-q.jpg"];
-      sortedValues = [IMG_URL + "base.jpg", IMG_URL + "crypto-q.jpg"];
-      const sortedValuesLength = (sortedValues as string[]).length;
+      const sortedValuesLength = sortedValues.length;
 
       if (buttonId == 2) {
         // console.log("I am in Next")
