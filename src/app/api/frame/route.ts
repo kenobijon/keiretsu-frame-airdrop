@@ -5,6 +5,7 @@ import { FrameRequest } from "../../types/farcasterTypes";
 const POST_URL = "https://keiretsu-frame-airdrop.vercel.app/api/frame";
 const VISIT_URL = "https://keiretsu-frame-airdrop.vercel.app/api/frame";
 const TOGGLE_URL = "https://keiretsu-frame-airdrop.vercel.app/api/toggle";
+const Q2_URL = "https://keiretsu-frame-airdrop.vercel.app/api/Q2";
 
 export async function POST(req: NextRequest, res: NextResponse) {
   console.log("POST received at /api/frame");
@@ -14,6 +15,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
   let validatedMessage: Message | undefined = undefined;
   try {
     const body: FrameRequest = await req.json();
+    console.log(body);
     const frameMessage = Message.decode(
       Buffer.from(body?.trustedData?.messageBytes || "", "hex")
     );
@@ -71,9 +73,8 @@ export async function POST(req: NextRequest, res: NextResponse) {
       `<!DOCTYPE html><html><head>` +
       `<meta property="fc:frame" content="vNext" />` +
       `<meta property="fc:frame:image" content="${CORRECT_IMAGE_URL}" />` +
-      `<meta property="fc:frame:button:1" content="Previous Question" />` +
       `<meta property="fc:frame:button:1" content="Next Question" />` +
-      `<meta property="fc:frame:post_url" content="${TOGGLE_URL}" />` +
+      `<meta property="fc:frame:post_url" content="${Q2_URL}" />` +
       `</head></html>`;
   } else if (buttonId === 4) {
     html =
