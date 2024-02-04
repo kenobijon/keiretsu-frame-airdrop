@@ -16,6 +16,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
   let validatedMessage: Message | undefined = undefined;
   try {
     const body: FrameRequest = await req.json();
+    console.log(body);
     const frameMessage = Message.decode(
       Buffer.from(body?.trustedData?.messageBytes || "", "hex")
     );
