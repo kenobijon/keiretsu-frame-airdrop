@@ -74,7 +74,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
       `<meta property="fc:frame" content="vNext" />` +
       `<meta property="fc:frame:image" content="${CORRECT_IMAGE_URL}" />` +
       `<meta property="fc:frame:button:1" content="Next Question" />` +
-      `<meta property="fc:frame:post_url" content="${Q2_URL}?question=2" />` +
+      `<meta property="fc:frame:post_url" content="${Q2_URL}" />` +
       `</head></html>`;
   } else if (buttonId === 4) {
     html =
