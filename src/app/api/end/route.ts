@@ -43,13 +43,19 @@ export async function POST(req: NextRequest, res: NextResponse) {
   const INCORRECT_IMAGE_URL =
     "https://t4.ftcdn.net/jpg/03/87/37/09/360_F_387370928_uxePPpjy9FtcCCU3oTjHbPsKjl36mOaX.jpg";
 
-  const IMG_URL = "https://keiretsu-frame-airdrop.vercel.app/end.jpg";
+  const IMG_URL = "https://keiretsu-frame-airdrop.vercel.app/stand.jpeg";
+
+  // If buttonId is 1, redirect to the external website
+  if (buttonId === 1) {
+    return NextResponse.redirect("https://www.standwithcrypto.org/");
+  }
 
   let html =
     `<!DOCTYPE html><html><head>` +
     `<meta property="fc:frame" content="vNext" />` +
     `<meta property="fc:frame:image" content="${IMG_URL}" />` +
-    `<meta property="fc:frame:button:1" content="The End!" />` +
+    `<meta property="fc:frame:button:2" content="Go to Stand With Crypto" />` +
+    `<meta property="fc:frame:button:2:action" content="post_redirect" />` +
     `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
     `</head></html>`;
 
