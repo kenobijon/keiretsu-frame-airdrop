@@ -9,7 +9,7 @@ const Q2_URL = "https://keiretsu-frame-airdrop.vercel.app/api/q2";
 const Q3_URL = "https://keiretsu-frame-airdrop.vercel.app/api/end";
 
 export async function POST(req: NextRequest, res: NextResponse) {
-  console.log("POST received at /api/frame");
+  console.log("POST received at /api/end");
 
   const HUB_URL = process.env["HUB_URL"] || "nemes.farcaster.xyz:2283";
   const client = getSSLHubRpcClient(HUB_URL);
@@ -42,23 +42,12 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
   const IMG_URL = "https://keiretsu-frame-airdrop.vercel.app/stand.png";
 
-  // If buttonId is 1, redirect to the external website
-  if (buttonId === 2) {
-    // return NextResponse.redirect("https://www.standwithcrypto.org/");
-    return new Response(null, {
-      status: 302,
-      headers: {
-        Location: "https://www.standwithcrypto.org/",
-      },
-    });
-  }
-
   let html =
     `<!DOCTYPE html><html><head>` +
     `<meta property="fc:frame" content="vNext" />` +
     `<meta property="fc:frame:image" content="${IMG_URL}" />` +
-    `<meta property="fc:frame:button:2" content="Go to Stand With Crypto" />` +
-    `<meta property="fc:frame:button:2:action" content="post_redirect" />` +
+    `<meta property="fc:frame:button:1" content="Go to Stand With Crypto" />` +
+    `<meta property="fc:frame:button:1:action" content="post_redirect" />` +
     `<meta property="fc:frame:input:text" content="redirect" />` +
     `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
     `</head></html>`;
