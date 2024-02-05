@@ -2,14 +2,14 @@ import { NextRequest, NextResponse } from "next/server";
 import { Message, getSSLHubRpcClient } from "@farcaster/hub-nodejs";
 import { FrameRequest } from "../../types/farcasterTypes";
 
-// const POST_URL = "https://keiretsu-frame-airdrop.vercel.app/api/frame";
+const POST_URL = "https://keiretsu-frame-airdrop.vercel.app/api/q3-answer";
 const VISIT_URL = "https://keiretsu-frame-airdrop.vercel.app/api/frame";
 const TOGGLE_URL = "https://keiretsu-frame-airdrop.vercel.app/api/toggle";
-const POST_URL = "https://keiretsu-frame-airdrop.vercel.app/api/q2-answer";
+const Q2_URL = "https://keiretsu-frame-airdrop.vercel.app/api/q2";
 const Q2_IMAGE_URL = "https://keiretsu-frame-airdrop.vercel.app/g20-q.png";
 
 export async function POST(req: NextRequest, res: NextResponse) {
-  console.log("POST received at /api/q2");
+  console.log("POST received at /api/q3");
 
   const HUB_URL = process.env["HUB_URL"] || "nemes.farcaster.xyz:2283";
   const client = getSSLHubRpcClient(HUB_URL);

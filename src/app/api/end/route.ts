@@ -2,14 +2,14 @@ import { NextRequest, NextResponse } from "next/server";
 import { Message, getSSLHubRpcClient } from "@farcaster/hub-nodejs";
 import { FrameRequest } from "../../types/farcasterTypes";
 
-// const POST_URL = "https://keiretsu-frame-airdrop.vercel.app/api/frame";
+const POST_URL = "https://keiretsu-frame-airdrop.vercel.app/api/q2-answer";
 const VISIT_URL = "https://keiretsu-frame-airdrop.vercel.app/api/frame";
 const TOGGLE_URL = "https://keiretsu-frame-airdrop.vercel.app/api/toggle";
-const POST_URL = "https://keiretsu-frame-airdrop.vercel.app/api/q2-answer";
-const Q2_IMAGE_URL = "https://keiretsu-frame-airdrop.vercel.app/g20-q.png";
+const Q2_URL = "https://keiretsu-frame-airdrop.vercel.app/api/q2";
+const Q3_URL = "https://keiretsu-frame-airdrop.vercel.app/api/q3";
 
 export async function POST(req: NextRequest, res: NextResponse) {
-  console.log("POST received at /api/q2");
+  console.log("POST received at /api/frame");
 
   const HUB_URL = process.env["HUB_URL"] || "nemes.farcaster.xyz:2283";
   const client = getSSLHubRpcClient(HUB_URL);
@@ -37,15 +37,20 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
   console.log(validatedMessage);
 
+  const buttonId = validatedMessage?.data?.frameActionBody?.buttonIndex || 0;
+  const fid = validatedMessage?.data?.fid || 0;
+
+  const INCORRECT_IMAGE_URL =
+    "https://t4.ftcdn.net/jpg/03/87/37/09/360_F_387370928_uxePPpjy9FtcCCU3oTjHbPsKjl36mOaX.jpg";
+
+  const IMG_URL = "https://keiretsu-frame-airdrop.vercel.app/end.jpg";
+
   let html =
     `<!DOCTYPE html><html><head>` +
     `<meta property="fc:frame" content="vNext" />` +
-    `<meta property="fc:frame:image" content="${Q2_IMAGE_URL}" />` +
-    `<meta property="fc:frame:button:1" content="25%" />` +
-    `<meta property="fc:frame:button:2" content="52%" />` +
-    `<meta property="fc:frame:button:3" content="67%" />` +
-    `<meta property="fc:frame:button:4" content="83%" />` +
-    `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
+    `<meta property="fc:frame:image" content="${IMG_URL}" />` +
+    `<meta property="fc:frame:button:1" content="The End!" />` +
+    `<meta property="fc:frame:post_url" content="${Q3_URL}" />` +
     `</head></html>`;
 
   return new Response(html, { headers: { "Content-Type": "text/html" } });
