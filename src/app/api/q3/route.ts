@@ -6,7 +6,7 @@ const POST_URL = "https://keiretsu-frame-airdrop.vercel.app/api/q3-answer";
 const VISIT_URL = "https://keiretsu-frame-airdrop.vercel.app/api/frame";
 const TOGGLE_URL = "https://keiretsu-frame-airdrop.vercel.app/api/toggle";
 const Q2_URL = "https://keiretsu-frame-airdrop.vercel.app/api/q2";
-const Q2_IMAGE_URL = "https://keiretsu-frame-airdrop.vercel.app/g20-q.png";
+const Q3_IMAGE_URL = "https://keiretsu-frame-airdrop.vercel.app/jobs.png";
 
 export async function POST(req: NextRequest, res: NextResponse) {
   console.log("POST received at /api/q3");
@@ -40,11 +40,11 @@ export async function POST(req: NextRequest, res: NextResponse) {
   let html =
     `<!DOCTYPE html><html><head>` +
     `<meta property="fc:frame" content="vNext" />` +
-    `<meta property="fc:frame:image" content="${Q2_IMAGE_URL}" />` +
-    `<meta property="fc:frame:button:1" content="25%" />` +
-    `<meta property="fc:frame:button:2" content="52%" />` +
-    `<meta property="fc:frame:button:3" content="67%" />` +
-    `<meta property="fc:frame:button:4" content="83%" />` +
+    `<meta property="fc:frame:image" content="${Q3_IMAGE_URL}" />` +
+    `<meta property="fc:frame:button:1" content="100k" />` +
+    `<meta property="fc:frame:button:2" content="2M" />` +
+    `<meta property="fc:frame:button:3" content="4M" />` +
+    `<meta property="fc:frame:button:4" content="7M" />` +
     `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
     `</head></html>`;
 

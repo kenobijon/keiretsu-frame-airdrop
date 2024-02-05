@@ -52,10 +52,10 @@ export async function POST(req: NextRequest, res: NextResponse) {
       `<!DOCTYPE html><html><head>` +
       `<meta property="fc:frame" content="vNext" />` +
       `<meta property="fc:frame:image" content="${INCORRECT_IMAGE_URL}" />` +
-      `<meta property="fc:frame:button:1" content="25%" />` +
-      `<meta property="fc:frame:button:2" content="52%" />` +
-      `<meta property="fc:frame:button:3" content="67%" />` +
-      `<meta property="fc:frame:button:4" content="83%" />` +
+      `<meta property="fc:frame:button:1" content="100k" />` +
+      `<meta property="fc:frame:button:2" content="2M" />` +
+      `<meta property="fc:frame:button:3" content="4M" />` +
+      `<meta property="fc:frame:button:4" content="7M" />` +
       `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
       `</head></html>`;
   } else if (buttonId === 2) {
@@ -63,30 +63,30 @@ export async function POST(req: NextRequest, res: NextResponse) {
       `<!DOCTYPE html><html><head>` +
       `<meta property="fc:frame" content="vNext" />` +
       `<meta property="fc:frame:image" content="${INCORRECT_IMAGE_URL}" />` +
-      `<meta property="fc:frame:button:1" content="25%" />` +
-      `<meta property="fc:frame:button:2" content="52%" />` +
-      `<meta property="fc:frame:button:3" content="67%" />` +
-      `<meta property="fc:frame:button:4" content="83%" />` +
+      `<meta property="fc:frame:button:1" content="100k" />` +
+      `<meta property="fc:frame:button:2" content="2M" />` +
+      `<meta property="fc:frame:button:3" content="4M" />` +
+      `<meta property="fc:frame:button:4" content="7M" />` +
       `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
       `</head></html>`;
   } else if (buttonId === 3) {
     html =
       `<!DOCTYPE html><html><head>` +
       `<meta property="fc:frame" content="vNext" />` +
-      `<meta property="fc:frame:image" content="${INCORRECT_IMAGE_URL}" />` +
-      `<meta property="fc:frame:button:1" content="25%" />` +
-      `<meta property="fc:frame:button:2" content="52%" />` +
-      `<meta property="fc:frame:button:3" content="67%" />` +
-      `<meta property="fc:frame:button:4" content="83%" />` +
-      `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
+      `<meta property="fc:frame:image" content="${CORRECT_IMAGE_URL}" />` +
+      `<meta property="fc:frame:button:1" content="Visit StandWithCrypto.org to Learn More!" />` +
+      `<meta property="fc:frame:post_url" content="${END_URL}" />` +
       `</head></html>`;
   } else if (buttonId === 4) {
     html =
       `<!DOCTYPE html><html><head>` +
       `<meta property="fc:frame" content="vNext" />` +
-      `<meta property="fc:frame:image" content="${CORRECT_IMAGE_URL}" />` +
-      `<meta property="fc:frame:button:1" content="Next Question" />` +
-      `<meta property="fc:frame:post_url" content="${END_URL}" />` +
+      `<meta property="fc:frame:image" content="${INCORRECT_IMAGE_URL}" />` +
+      `<meta property="fc:frame:button:1" content="100k" />` +
+      `<meta property="fc:frame:button:2" content="2M" />` +
+      `<meta property="fc:frame:button:3" content="4M" />` +
+      `<meta property="fc:frame:button:4" content="7M" />` +
+      `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
       `</head></html>`;
   }
 
