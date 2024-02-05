@@ -40,10 +40,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
   const buttonId = validatedMessage?.data?.frameActionBody?.buttonIndex || 0;
   const fid = validatedMessage?.data?.fid || 0;
 
-  const INCORRECT_IMAGE_URL =
-    "https://t4.ftcdn.net/jpg/03/87/37/09/360_F_387370928_uxePPpjy9FtcCCU3oTjHbPsKjl36mOaX.jpg";
-
-  const IMG_URL = "https://keiretsu-frame-airdrop.vercel.app/stand.jpeg";
+  const IMG_URL = "https://keiretsu-frame-airdrop.vercel.app/stand.png";
 
   //   // If buttonId is 1, redirect to the external website
   //   if (buttonId === 2) {
@@ -60,7 +57,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
     `<!DOCTYPE html><html><head>` +
     `<meta property="fc:frame" content="vNext" />` +
     `<meta property="fc:frame:image" content="${IMG_URL}" />` +
-    `<meta property="fc:frame:button:2" content="Go to Stand With Crypto" />` +
+    `<meta property="fc:frame:button:1" content="Go to Stand With Crypto" />` +
     `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
     `</head></html>`;
 
