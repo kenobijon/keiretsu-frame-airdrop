@@ -55,7 +55,6 @@ export async function POST(req: NextRequest, res: NextResponse) {
     `<meta property="fc:frame:button:1" content="Go back to Quiz" />` +
     `<meta property="fc:frame:button:2" content="Go to Stand With Crypto" />` +
     `<meta property="fc:frame:button:2:action" content="post_redirect" />` +
-    `<meta property="fc:frame:input:text" content="redirect" />` +
     `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
     `</head></html>`;
 
