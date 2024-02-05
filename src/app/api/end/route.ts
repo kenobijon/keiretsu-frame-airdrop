@@ -46,8 +46,14 @@ export async function POST(req: NextRequest, res: NextResponse) {
   const IMG_URL = "https://keiretsu-frame-airdrop.vercel.app/stand.jpeg";
 
   // If buttonId is 1, redirect to the external website
-  if (buttonId === 1) {
-    return NextResponse.redirect("https://www.standwithcrypto.org/");
+  if (buttonId === 2) {
+    // return NextResponse.redirect("https://www.standwithcrypto.org/");
+    return new Response(null, {
+      status: 302,
+      headers: {
+        Location: "https://www.standwithcrypto.org/",
+      },
+    });
   }
 
   let html =
