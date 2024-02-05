@@ -42,6 +42,8 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
   const IMG_URL = "https://keiretsu-frame-airdrop.vercel.app/stand.png";
 
+  return Response.redirect("https://standwithcrypto.org", 302);
+
   let html =
     `<!DOCTYPE html><html><head>` +
     `<meta property="fc:frame" content="vNext" />` +
