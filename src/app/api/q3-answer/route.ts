@@ -7,6 +7,7 @@ const VISIT_URL = "https://keiretsu-frame-airdrop.vercel.app/api/frame";
 const TOGGLE_URL = "https://keiretsu-frame-airdrop.vercel.app/api/toggle";
 const Q2_URL = "https://keiretsu-frame-airdrop.vercel.app/api/q2";
 const END_URL = "https://keiretsu-frame-airdrop.vercel.app/api/end";
+const Q3_URL = "https://keiretsu-frame-airdrop.vercel.app/api/q3";
 
 export async function POST(req: NextRequest, res: NextResponse) {
   console.log("POST received at /api/frame");
@@ -47,29 +48,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
     "https://i.pinimg.com/originals/fd/d0/0e/fdd00eff2cfe977daed3584f56eafbc9.gif";
 
   let html = "";
-  if (buttonId === 1) {
-    html =
-      `<!DOCTYPE html><html><head>` +
-      `<meta property="fc:frame" content="vNext" />` +
-      `<meta property="fc:frame:image" content="${INCORRECT_IMAGE_URL}" />` +
-      `<meta property="fc:frame:button:1" content="100k" />` +
-      `<meta property="fc:frame:button:2" content="2M" />` +
-      `<meta property="fc:frame:button:3" content="4M" />` +
-      `<meta property="fc:frame:button:4" content="7M" />` +
-      `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
-      `</head></html>`;
-  } else if (buttonId === 2) {
-    html =
-      `<!DOCTYPE html><html><head>` +
-      `<meta property="fc:frame" content="vNext" />` +
-      `<meta property="fc:frame:image" content="${INCORRECT_IMAGE_URL}" />` +
-      `<meta property="fc:frame:button:1" content="100k" />` +
-      `<meta property="fc:frame:button:2" content="2M" />` +
-      `<meta property="fc:frame:button:3" content="4M" />` +
-      `<meta property="fc:frame:button:4" content="7M" />` +
-      `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
-      `</head></html>`;
-  } else if (buttonId === 3) {
+  if (buttonId === 3) {
     html =
       `<!DOCTYPE html><html><head>` +
       `<meta property="fc:frame" content="vNext" />` +
@@ -77,16 +56,13 @@ export async function POST(req: NextRequest, res: NextResponse) {
       `<meta property="fc:frame:button:1" content="Visit StandWithCrypto.org to Learn More!" />` +
       `<meta property="fc:frame:post_url" content="${END_URL}" />` +
       `</head></html>`;
-  } else if (buttonId === 4) {
+  } else {
     html =
       `<!DOCTYPE html><html><head>` +
       `<meta property="fc:frame" content="vNext" />` +
       `<meta property="fc:frame:image" content="${INCORRECT_IMAGE_URL}" />` +
-      `<meta property="fc:frame:button:1" content="100k" />` +
-      `<meta property="fc:frame:button:2" content="2M" />` +
-      `<meta property="fc:frame:button:3" content="4M" />` +
-      `<meta property="fc:frame:button:4" content="7M" />` +
-      `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
+      `<meta property="fc:frame:button:1" content="Try Again" />` +
+      `<meta property="fc:frame:post_url" content="${Q3_URL}" />` +
       `</head></html>`;
   }
 
