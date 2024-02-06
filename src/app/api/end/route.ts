@@ -43,7 +43,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
   const IMG_URL = "https://keiretsu-frame-airdrop.vercel.app/stand.png";
 
   // If buttonId is 1, redirect to the external website
-  if (buttonId === 1) {
+  if (buttonId === 2) {
     // return NextResponse.redirect("https://www.standwithcrypto.org/");
     return Response.redirect("https://standwithcrypto.org", 302);
   }
@@ -52,8 +52,9 @@ export async function POST(req: NextRequest, res: NextResponse) {
     `<!DOCTYPE html><html><head>` +
     `<meta property="fc:frame" content="vNext" />` +
     `<meta property="fc:frame:image" content="${IMG_URL}" />` +
-    `<meta property="fc:frame:button:1" content="Go to Stand With Crypto" />` +
-    `<meta property="fc:frame:button:1:action" content="post_redirect" />` +
+    `<meta property="fc:frame:button:1" content="Go back to Quiz" />` +
+    `<meta property="fc:frame:button:2" content="Go to Stand With Crypto" />` +
+    `<meta property="fc:frame:button:2:action" content="post_redirect" />` +
     `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
     `</head></html>`;
 
