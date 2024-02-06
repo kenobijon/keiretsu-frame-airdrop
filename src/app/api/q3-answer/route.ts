@@ -53,7 +53,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
       `<!DOCTYPE html><html><head>` +
       `<meta property="fc:frame" content="vNext" />` +
       `<meta property="fc:frame:image" content="${CORRECT_IMAGE_URL}" />` +
-      `<meta property="fc:frame:button:1" content="Visit StandWithCrypto.org to Learn More!" />` +
+      `<meta property="fc:frame:button:1" content="Next" />` +
       `<meta property="fc:frame:post_url" content="${END_URL}" />` +
       `</head></html>`;
   } else {
