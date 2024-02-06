@@ -47,29 +47,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
     "https://i.pinimg.com/originals/fd/d0/0e/fdd00eff2cfe977daed3584f56eafbc9.gif";
 
   let html = "";
-  if (buttonId === 1) {
-    html =
-      `<!DOCTYPE html><html><head>` +
-      `<meta property="fc:frame" content="vNext" />` +
-      `<meta property="fc:frame:image" content="${INCORRECT_IMAGE_URL}" />` +
-      `<meta property="fc:frame:button:1" content="5 Million" />` +
-      `<meta property="fc:frame:button:2" content="25 Million" />` +
-      `<meta property="fc:frame:button:3" content="52 Million" />` +
-      `<meta property="fc:frame:button:4" content="74 Million" />` +
-      `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
-      `</head></html>`;
-  } else if (buttonId === 2) {
-    html =
-      `<!DOCTYPE html><html><head>` +
-      `<meta property="fc:frame" content="vNext" />` +
-      `<meta property="fc:frame:image" content="${INCORRECT_IMAGE_URL}" />` +
-      `<meta property="fc:frame:button:1" content="5 Million" />` +
-      `<meta property="fc:frame:button:2" content="25 Million" />` +
-      `<meta property="fc:frame:button:3" content="52 Million" />` +
-      `<meta property="fc:frame:button:4" content="74 Million" />` +
-      `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
-      `</head></html>`;
-  } else if (buttonId === 3) {
+  if (buttonId === 3) {
     html =
       `<!DOCTYPE html><html><head>` +
       `<meta property="fc:frame" content="vNext" />` +
@@ -77,16 +55,13 @@ export async function POST(req: NextRequest, res: NextResponse) {
       `<meta property="fc:frame:button:1" content="Next Question" />` +
       `<meta property="fc:frame:post_url" content="${Q2_URL}" />` +
       `</head></html>`;
-  } else if (buttonId === 4) {
+  } else {
     html =
       `<!DOCTYPE html><html><head>` +
       `<meta property="fc:frame" content="vNext" />` +
       `<meta property="fc:frame:image" content="${INCORRECT_IMAGE_URL}" />` +
-      `<meta property="fc:frame:button:1" content="5 Million" />` +
-      `<meta property="fc:frame:button:2" content="25 Million" />` +
-      `<meta property="fc:frame:button:3" content="52 Million" />` +
-      `<meta property="fc:frame:button:4" content="74 Million" />` +
-      `<meta property="fc:frame:post_url" content="${POST_URL}" />` +
+      `<meta property="fc:frame:button:1" content="Try Again" />` +
+      `<meta property="fc:frame:post_url" content="${Q1_URL}" />` +
       `</head></html>`;
   }
 
